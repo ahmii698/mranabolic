@@ -1,5 +1,6 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
               url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070');
   background-size: cover;
@@ -28,7 +29,7 @@
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   font-weight: 800;
   background: linear-gradient(135deg, #fff 30%, #e31b23 80%);
   -webkit-background-clip: text;
@@ -44,7 +45,7 @@
 }
 
 .title-icon-hero {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   color: #e31b23;
   animation: rotateIcon 4s linear infinite;
 }
@@ -55,7 +56,7 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(0.85rem, 4vw, 1.5rem);
   opacity: 0.9;
   margin-bottom: 30px;
 }
@@ -151,8 +152,13 @@
   to { opacity: 1; }
 }
 
-/* Responsive */
+/* ========== RESPONSIVE - TABLET ========== */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+  
   .hero-badge {
     flex-direction: column;
     gap: 8px;
@@ -166,20 +172,83 @@
   .hero-title {
     flex-direction: column;
     gap: 5px;
+    letter-spacing: 2px;
   }
   
   .scroll-icon {
     font-size: 1.2rem;
   }
+  
+  .scroll-indicator {
+    bottom: 15px;
+  }
 }
 
+/* ========== RESPONSIVE - MOBILE ========== */
 @media (max-width: 480px) {
-  .hero-badge {
+  .hero {
+    min-height: 65vh;
+    padding: 20px 0;
+  }
+  
+  .hero-content {
+    padding: 15px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
     font-size: 0.75rem;
-    padding: 10px 15px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 8px 12px;
+    gap: 6px;
   }
   
   .badge-icon {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  .badge-item {
+    gap: 4px;
+  }
+  
+  .scroll-indicator {
+    bottom: 8px;
+  }
+  
+  .scroll-icon {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== EXTRA SMALL DEVICES ========== */
+@media (max-width: 380px) {
+  .hero {
+    min-height: 55vh;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.65rem;
+  }
+  
+  .hero-badge {
+    font-size: 0.55rem;
+    padding: 6px 10px;
+  }
+  
+  .badge-icon {
+    font-size: 0.6rem;
   }
 }
