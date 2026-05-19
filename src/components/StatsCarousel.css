@@ -1,0 +1,243 @@
+.stats-carousel {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 100%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.carousel-title span {
+  background: linear-gradient(135deg, #fff, #e31b23);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.carousel-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #e31b23, transparent);
+}
+
+.carousel-subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 50px;
+  font-size: 1rem;
+}
+
+/* ========== PURE CSS MARQUEE - NO PAUSE EVER ========== */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+/* Hover par bhi nahi rukega - animation continues forever */
+.marquee-track:hover {
+  animation-play-state: running;
+}
+
+/* Smooth infinite scroll animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Stat Box Styles */
+.stat-box {
+  background: linear-gradient(135deg, #1a1a1a 0%, #141414 100%);
+  border-radius: 20px;
+  padding: 35px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  min-width: 220px;
+  flex-shrink: 0;
+}
+
+.stat-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: var(--stat-color);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.stat-box-icon {
+  font-size: 3rem;
+  color: var(--stat-color);
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+
+.stat-box:hover .stat-box-icon {
+  transform: scale(1.1);
+}
+
+.stat-box-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--stat-color);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.stat-box-label {
+  font-size: 0.85rem;
+  color: #ccc;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-hover-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--stat-color);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.stat-box:hover .stat-hover-effect {
+  transform: scaleX(1);
+}
+
+.carousel-info {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.carousel-auto-text {
+  display: inline-block;
+  background: rgba(227, 27, 35, 0.1);
+  padding: 8px 20px;
+  border-radius: 30px;
+  color: #e31b23;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stat-box {
+    min-width: 200px;
+    padding: 25px 20px;
+  }
+  
+  .stat-box-icon {
+    font-size: 2.5rem;
+  }
+  
+  .stat-box-value {
+    font-size: 1.5rem;
+  }
+  
+  .marquee-track {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-carousel {
+    padding: 50px 15px;
+  }
+  
+  .carousel-title {
+    font-size: 1.8rem;
+  }
+  
+  .stat-box {
+    min-width: 180px;
+    padding: 20px 15px;
+  }
+  
+  .stat-box-icon {
+    font-size: 2rem;
+  }
+  
+  .stat-box-value {
+    font-size: 1.2rem;
+  }
+  
+  .stat-box-label {
+    font-size: 0.7rem;
+  }
+  
+  .marquee-track {
+    gap: 15px;
+  }
+  
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-box {
+    min-width: 160px;
+    padding: 15px 12px;
+  }
+  
+  .stat-box-icon {
+    font-size: 1.5rem;
+  }
+  
+  .stat-box-value {
+    font-size: 1rem;
+  }
+  
+  .marquee-track {
+    gap: 12px;
+  }
+}

@@ -57,28 +57,13 @@ const ImportanceSection = () => {
   return (
     <section className="importance">
       <div className="container">
-        <h2 className="section-title">
-          Why Supplements Matter?
-        </h2>
         
-        <div className="importance-grid">
-          {importanceData.map((item, index) => (
-            <div className="importance-card" key={index} style={{ '--hover-color': item.color }}>
-              <div className="icon-wrapper">
-                {item.icon}
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Split Image Transformation Section */}
+        {/* 1. Transformation Section - Pehle */}
         <div className="transformation">
           <h3>
-            
+        
             Real Transformation Stories
-            
+           
           </h3>
           
           <div className="transformation-slider">
@@ -136,6 +121,26 @@ const ImportanceSection = () => {
             </p>
           </div>
         </div>
+
+        {/* 2. Why Supplements Matter - Baad mein */}
+        <div className="supplements-section">
+          <h2 className="section-title">
+            Why Supplements Matter?
+          </h2>
+          
+          <div className="importance-grid">
+            {importanceData.map((item, index) => (
+              <div className="importance-card" key={index} style={{ '--hover-color': item.color }}>
+                <div className="icon-wrapper">
+                  {item.icon}
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
